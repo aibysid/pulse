@@ -1,0 +1,37 @@
+{
+  "origin": "http://127.0.0.1:4173",
+  "date": "2026-10-10T12:13:31.792Z",
+  "results": [
+    {
+      "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": 38132
+    },
+    {
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2011-03-11&endtime=2011-03-12&minmagnitude=8&limit=5",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "bytes": 1443
+    },
+    {
+      "url": "https://service.earthscope.org/fdsnws/station/1/query?net=IU&level=station&format=text&startbefore=2011-03-11T05:46:24&endafter=2011-03-11T05:46:24",
+      "status": 200,
+      "type": "text/plain",
+      "bytes": 6770
+    },
+    {
+      "url": "https://service.earthscope.org/fdsnws/station/1/query?net=IU&sta=ANMO&cha=BHZ,HHZ&level=channel&format=text&starttime=2011-03-11T05:55:00&endtime=2011-03-11T06:15:00",
+      "status": 200,
+      "type": "text/plain",
+      "bytes": 702
+    },
+    {
+      "url": "https://service.earthscope.org/fdsnws/dataselect/1/query?net=IU&sta=ANMO&loc=00&cha=BHZ&starttime=2011-03-11T05:55:00&endtime=2011-03-11T06:15:00",
+      "status": 200,
+      "type": "application/vnd.fdsn.mseed",
+      "bytes": 51200
+    }
+  ],
+  "waveform": "Recorded evidence\n\nArchive recordings are observations. A modeled station arrival is a prediction, not a detection.\n\nLoad IU.ANMO recording\nDated Tohoku reference\n\n98 recorded segments · 0 gaps · 0 overlaps\n\nOn demand archive recording · IU.ANMO.00.BHZ\n\n5 minutes before through 15 minutes after modeled direct P\n2011-03-11 05:53:46 UTC — 2011-03-11 06:13:46 UTC\nFetched 2026-10-10 12:13:30 UTC · EarthScope\n\nExact archive request ↗\n\nRaw instrument counts · sampling rates 20 Hz. Gaps break the trace; overlaps are retained.\n\n Remove segment mean (display only)\nDownload original miniSEED"
+}

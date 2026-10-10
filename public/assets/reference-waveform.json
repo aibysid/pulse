@@ -1,0 +1,14 @@
+{
+  "network": "IU",
+  "station": "ANMO",
+  "location": "00",
+  "channel": "BHZ",
+  "start": "2011-03-11T05:55:00Z",
+  "end": "2011-03-11T06:15:00Z",
+  "retrievedAt": "2026-10-10T11:53:33.931460+00:00",
+  "sourceUrl": "https://service.earthscope.org/fdsnws/dataselect/1/query?net=IU&sta=ANMO&loc=00&cha=BHZ&start=2011-03-11T05:55:00&end=2011-03-11T06:15:00",
+  "bytes": 51200,
+  "sha256": "8af109e38ae0b97ee0562c0421a953c4df2475f59acecd383d7df87a9f5ab948",
+  "eventId": "official20110311054624120_30",
+  "units": "raw instrument counts"
+}

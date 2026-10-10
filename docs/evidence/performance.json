@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-10T12:18:02.746Z",
+  "browser": "156.0.8078.4",
+  "platform": "darwin",
+  "arch": "arm64",
+  "viewport": "1440x900",
+  "pageErrors": [],
+  "ownedBytes": 2617350,
+  "note": "Automated browser evidence; does not certify physical devices or previous-stable versions.",
+  "mobileOverflow": false,
+  "slow4G": {
+    "paint": [
+      {
+        "name": "first-paint",
+        "ms": 408
+      },
+      {
+        "name": "first-contentful-paint",
+        "ms": 988
+      }
+    ],
+    "heap": 10000000
+  }
+}

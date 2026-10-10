@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "method": "five fresh TauP samples per accepted cell; phase identity and ray parameter continuity rejection",
+  "seed": 91,
+  "samples": 133315,
+  "acceptedCells": 51975,
+  "rejectedCells": 48825,
+  "maximumErrorSeconds": 0.35425007061148506,
+  "p99ErrorSeconds": 0.08852954820833377,
+  "generationSeconds": 325.4362540245056,
+  "rawBytes": 1045130,
+  "limitation": "Discontinuous, missing-phase and phase-switch cells are rejected. All continuous candidate cells passed without refinement.",
+  "seededRandomValidation": {
+    "seed": 91,
+    "attempts": 500,
+    "acceptedSamples": 468,
+    "maximumErrorSeconds": 0.1274152770499768
+  }
+}

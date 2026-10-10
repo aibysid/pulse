@@ -1,0 +1,182 @@
+[
+  {
+    "name": "1960 Chile",
+    "retrievedAt": "2026-10-10T11:53:33.931460+00:00",
+    "queryUrl": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1960-05-22&endtime=1960-05-23&latitude=-38&longitude=-73&maxradiuskm=1200&minmagnitude=8&orderby=magnitude&limit=5",
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "mag": 9.5,
+        "place": "1960 Great Chilean Earthquake (Valdivia Earthquake)",
+        "time": -303281320000,
+        "updated": 1791568769060,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/official19600522191120_30",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=official19600522191120_30&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": 8.842,
+        "alert": null,
+        "status": "automatic",
+        "tsunami": 0,
+        "sig": 1388,
+        "net": "official",
+        "code": "19600522191120_30",
+        "ids": ",iscgem879136,official19600522191120_30,atlas19600522191117,",
+        "sources": ",iscgem,official,atlas,",
+        "types": ",general-header,ground-failure,impact-text,origin,shakemap,trump-origin,trump-shakemap,",
+        "nst": null,
+        "dmin": null,
+        "rms": null,
+        "gap": null,
+        "magType": "mw",
+        "type": "earthquake",
+        "title": "M 9.5 - 1960 Great Chilean Earthquake (Valdivia Earthquake)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.407,
+          -38.143,
+          25
+        ]
+      },
+      "id": "official19600522191120_30"
+    }
+  },
+  {
+    "name": "1964 Alaska",
+    "retrievedAt": "2026-10-10T11:53:33.931460+00:00",
+    "queryUrl": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1964-03-27&endtime=1964-03-29&latitude=61&longitude=-147&maxradiuskm=1200&minmagnitude=8&orderby=magnitude&limit=5",
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "mag": 9.2,
+        "place": "The 1964 Prince William Sound, Alaska Earthquake",
+        "time": -181859024000,
+        "updated": 1784106964142,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/official19640328033616_30",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=official19640328033616_30&format=geojson",
+        "felt": 459,
+        "cdi": 9.1,
+        "mmi": 8.392,
+        "alert": null,
+        "status": "automatic",
+        "tsunami": 0,
+        "sig": 1720,
+        "net": "official",
+        "code": "19640328033616_30",
+        "ids": ",akgoodfrid,official19640328033616_30,ushis2642,iscgem869809,atlas19640328033612,",
+        "sources": ",ak,official,ushis,iscgem,atlas,",
+        "types": ",dyfi,earthquake-name,general-header,general-link,ground-failure,impact-text,origin,shakemap,trump-origin,trump-shakemap,",
+        "nst": null,
+        "dmin": null,
+        "rms": null,
+        "gap": null,
+        "magType": "mw",
+        "type": "earthquake",
+        "title": "M 9.2 - The 1964 Prince William Sound, Alaska Earthquake"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -147.339,
+          60.908,
+          25
+        ]
+      },
+      "id": "official19640328033616_30"
+    }
+  },
+  {
+    "name": "2004 Sumatra",
+    "retrievedAt": "2026-10-10T11:53:33.931460+00:00",
+    "queryUrl": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2004-12-26&endtime=2004-12-27&latitude=3&longitude=96&maxradiuskm=1200&minmagnitude=8&orderby=magnitude&limit=5",
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "mag": 9.1,
+        "place": "2004 Sumatra - Andaman Islands Earthquake",
+        "time": 1104022733450,
+        "updated": 1780672574192,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/official20041226005853450_30",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=official20041226005853450_30&format=geojson",
+        "felt": 5,
+        "cdi": 8.6,
+        "mmi": 7.909,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 1278,
+        "net": "official",
+        "code": "20041226005853450_30",
+        "ids": ",official20041226005853450_30,duputel122604a,us2004slav,choy20041226005853,gcmtm122604a,usp000dbed,gcmt20041226005850,atlas20041226005853,iscgem7453151,",
+        "sources": ",official,duputel,us,choy,gcmt,us,gcmt,atlas,iscgem,",
+        "types": ",associate,dyfi,finite-fault,focal-mechanism,general-header,general-text,ground-failure,impact-text,moment-tensor,origin,phase-data,poster,shakemap,trump-origin,trump-shakemap,",
+        "nst": 601,
+        "dmin": null,
+        "rms": 1.17,
+        "gap": 22,
+        "magType": "mw",
+        "type": "earthquake",
+        "title": "M 9.1 - 2004 Sumatra - Andaman Islands Earthquake"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.982,
+          3.295,
+          30
+        ]
+      },
+      "id": "official20041226005853450_30"
+    }
+  },
+  {
+    "name": "2011 Tohoku",
+    "retrievedAt": "2026-10-10T11:53:33.931460+00:00",
+    "queryUrl": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2011-03-11&endtime=2011-03-12&latitude=38&longitude=142&maxradiuskm=1200&minmagnitude=8&orderby=magnitude&limit=5",
+    "feature": {
+      "type": "Feature",
+      "properties": {
+        "mag": 9.1,
+        "place": "2011 Great Tohoku Earthquake, Japan",
+        "time": 1299822384120,
+        "updated": 1790377722510,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/official20110311054624120_30",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=official20110311054624120_30&format=geojson",
+        "felt": 1459,
+        "cdi": 9.1,
+        "mmi": 8.18,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 2184,
+        "net": "official",
+        "code": "20110311054624120_30",
+        "ids": ",usc0001xgp,official20110311054624120_30,usp000hvnu,choy20110311054623,duputel201103110546a,atlas20110311054624,iscgem16461282,",
+        "sources": ",us,official,us,choy,duputel,atlas,iscgem,",
+        "types": ",dyfi,finite-fault,focal-mechanism,general-header,general-link,general-text,ground-failure,impact-text,moment-tensor,origin,phase-data,poster,scitech-link,scitech-text,shakemap,trump-impact-text,trump-origin,trump-phase-data,trump-shakemap,",
+        "nst": 541,
+        "dmin": null,
+        "rms": 1.16,
+        "gap": 9.5,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 9.1 - 2011 Great Tohoku Earthquake, Japan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          142.373,
+          38.297,
+          29
+        ]
+      },
+      "id": "official20110311054624120_30"
+    }
+  }
+]

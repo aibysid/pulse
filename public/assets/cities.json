@@ -1,0 +1,128 @@
+{
+  "source": "https://download.geonames.org/export/dump/cities15000.zip",
+  "license": "CC BY 4.0",
+  "attribution": "GeoNames",
+  "retrievedAt": "2026-10-10T12:08:55.718219+00:00",
+  "cities": [
+    {
+      "id": "new-delhi",
+      "name": "New Delhi",
+      "lat": 28.6139,
+      "lon": 77.209,
+      "coordinateSource": "https://www.geonames.org/1261481/",
+      "sourceLatitude": 28.62137,
+      "sourceLongitude": 77.2148,
+      "note": "Representative city-center preset reviewed against GeoNames; not an exact user or station position."
+    },
+    {
+      "id": "bengaluru",
+      "name": "Bengaluru",
+      "lat": 12.9716,
+      "lon": 77.5946,
+      "coordinateSource": "https://www.geonames.org/1277333/",
+      "sourceLatitude": 12.97194,
+      "sourceLongitude": 77.59369,
+      "note": "Representative city-center preset reviewed against GeoNames; not an exact user or station position."
+    },
+    {
+      "id": "london",
+      "name": "London",
+      "lat": 51.5074,
+      "lon": -0.1278,
+      "coordinateSource": "https://www.geonames.org/2643743/",
+      "sourceLatitude": 51.50853,
+      "sourceLongitude": -0.12574,
+      "note": "Representative city-center preset reviewed against GeoNames; not an exact user or station position."
+    },
+    {
+      "id": "tokyo",
+      "name": "Tokyo",
+      "lat": 35.6762,
+      "lon": 139.6503,
+      "coordinateSource": "https://www.geonames.org/1850147/",
+      "sourceLatitude": 35.6895,
+      "sourceLongitude": 139.69171,
+      "note": "Representative city-center preset reviewed against GeoNames; not an exact user or station position."
+    },
+    {
+      "id": "new-york",
+      "name": "New York",
+      "lat": 40.7128,
+      "lon": -74.006,
+      "coordinateSource": "https://www.geonames.org/5128581/",
+      "sourceLatitude": 40.71427,
+      "sourceLongitude": -74.00597,
+      "note": "Representative city-center preset reviewed against GeoNames; not an exact user or station position."
+    },
+    {
+      "id": "los-angeles",
+      "name": "Los Angeles",
+      "lat": 34.0522,
+      "lon": -118.2437,
+      "coordinateSource": "https://www.geonames.org/5368361/",
+      "sourceLatitude": 34.05223,
+      "sourceLongitude": -118.24368,
+      "note": "Representative city-center preset reviewed against GeoNames; not an exact user or station position."
+    },
+    {
+      "id": "santiago",
+      "name": "Santiago",
+      "lat": -33.4489,
+      "lon": -70.6693,
+      "coordinateSource": "https://www.geonames.org/3871336/",
+      "sourceLatitude": -33.45694,
+      "sourceLongitude": -70.64827,
+      "note": "Representative city-center preset reviewed against GeoNames; not an exact user or station position."
+    },
+    {
+      "id": "jakarta",
+      "name": "Jakarta",
+      "lat": -6.2088,
+      "lon": 106.8456,
+      "coordinateSource": "https://www.geonames.org/1642911/",
+      "sourceLatitude": -6.21462,
+      "sourceLongitude": 106.84513,
+      "note": "Representative city-center preset reviewed against GeoNames; not an exact user or station position."
+    },
+    {
+      "id": "wellington",
+      "name": "Wellington",
+      "lat": -41.2865,
+      "lon": 174.7762,
+      "coordinateSource": "https://www.geonames.org/2179537/",
+      "sourceLatitude": -41.28664,
+      "sourceLongitude": 174.77557,
+      "note": "Representative city-center preset reviewed against GeoNames; not an exact user or station position."
+    },
+    {
+      "id": "istanbul",
+      "name": "Istanbul",
+      "lat": 41.0082,
+      "lon": 28.9784,
+      "coordinateSource": "https://www.geonames.org/745044/",
+      "sourceLatitude": 41.01384,
+      "sourceLongitude": 28.94966,
+      "note": "Representative city-center preset reviewed against GeoNames; not an exact user or station position."
+    },
+    {
+      "id": "mexico-city",
+      "name": "Mexico City",
+      "lat": 19.4326,
+      "lon": -99.1332,
+      "coordinateSource": "https://www.geonames.org/3530597/",
+      "sourceLatitude": 19.42847,
+      "sourceLongitude": -99.12766,
+      "note": "Representative city-center preset reviewed against GeoNames; not an exact user or station position."
+    },
+    {
+      "id": "cape-town",
+      "name": "Cape Town",
+      "lat": -33.9249,
+      "lon": 18.4241,
+      "coordinateSource": "https://www.geonames.org/3369157/",
+      "sourceLatitude": -33.92584,
+      "sourceLongitude": 18.42322,
+      "note": "Representative city-center preset reviewed against GeoNames; not an exact user or station position."
+    }
+  ]
+}

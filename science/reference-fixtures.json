@@ -1,0 +1,137 @@
+[
+  {
+    "depthKm": 0,
+    "distanceDeg": 0,
+    "arrivals": [
+      {
+        "phase": "P",
+        "seconds": 0.0,
+        "rayParameter": 1098.448275862069
+      },
+      {
+        "phase": "S",
+        "seconds": 0.0,
+        "rayParameter": 1896.1309523809525
+      }
+    ]
+  },
+  {
+    "depthKm": 30,
+    "distanceDeg": 60,
+    "arrivals": [
+      {
+        "phase": "P",
+        "seconds": 603.654199848699,
+        "rayParameter": 393.49686487000486
+      },
+      {
+        "phase": "S",
+        "seconds": 1094.8482209777944,
+        "rayParameter": 736.6157867556708
+      }
+    ]
+  },
+  {
+    "depthKm": 30,
+    "distanceDeg": 110,
+    "arrivals": []
+  },
+  {
+    "depthKm": 30,
+    "distanceDeg": 150,
+    "arrivals": []
+  },
+  {
+    "depthKm": 700,
+    "distanceDeg": 60,
+    "arrivals": [
+      {
+        "phase": "P",
+        "seconds": 542.8598674834897,
+        "rayParameter": 374.79107571317786
+      },
+      {
+        "phase": "S",
+        "seconds": 985.4684103086789,
+        "rayParameter": 705.9310272265719
+      }
+    ]
+  },
+  {
+    "depthKm": 30,
+    "distanceDeg": 180,
+    "arrivals": []
+  },
+  {
+    "depthKm": 15,
+    "distanceDeg": 45.125,
+    "arrivals": [
+      {
+        "phase": "P",
+        "seconds": 495.61036330971007,
+        "rayParameter": 455.392739756935
+      },
+      {
+        "phase": "S",
+        "seconds": 895.1956004622489,
+        "rayParameter": 828.4975715134142
+      }
+    ]
+  },
+  {
+    "depthKm": 5,
+    "distanceDeg": 1.125,
+    "arrivals": [
+      {
+        "phase": "p",
+        "seconds": 21.576398093411807,
+        "rayParameter": 1097.0776476106405
+      },
+      {
+        "phase": "P",
+        "seconds": 21.92409141670951,
+        "rayParameter": 977.0769230769231
+      },
+      {
+        "phase": "P",
+        "seconds": 22.3600602377285,
+        "rayParameter": 1055.8293345183351
+      },
+      {
+        "phase": "P",
+        "seconds": 22.392301463354276,
+        "rayParameter": 788.0597014925374
+      },
+      {
+        "phase": "P",
+        "seconds": 22.90441082385208,
+        "rayParameter": 903.9136975602163
+      },
+      {
+        "phase": "s",
+        "seconds": 37.244972750523935,
+        "rayParameter": 1893.763756384341
+      },
+      {
+        "phase": "S",
+        "seconds": 37.90579903879828,
+        "rayParameter": 1693.5373572421856
+      },
+      {
+        "phase": "S",
+        "seconds": 38.59772325156371,
+        "rayParameter": 1822.5753846445575
+      },
+      {
+        "phase": "S",
+        "seconds": 39.10152251938043,
+        "rayParameter": 1417.4496644295302
+      },
+      {
+        "phase": "S",
+        "seconds": 39.624578211958784,
+        "rayParameter": 1565.2754489052334
+      }
+    ]
+  }
+]

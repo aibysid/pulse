@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "file": "land.geojson",
+      "originUrl": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_land.geojson",
+      "retrievedAt": "2026-10-10T12:03:33.300513+00:00",
+      "processing": "local files; numerical generation for model; bounded queries for events; original miniSEED",
+      "version": "1",
+      "author": "Natural Earth",
+      "license": "Public domain",
+      "attribution": "Natural Earth",
+      "sha256": "9e0729ee253ca7d7a5c4ae9395fb1902264c5377c52e224d13dd85010e2835d9"
+    },
+    {
+      "file": "landmarks.json",
+      "originUrl": "https://earthquake.usgs.gov/fdsnws/event/1/",
+      "retrievedAt": "2026-10-10T12:03:33.301126+00:00",
+      "processing": "local files; numerical generation for model; bounded queries for events; original miniSEED",
+      "version": "1",
+      "author": "USGS",
+      "license": "US Government public domain",
+      "attribution": "USGS",
+      "sha256": "c4abd22c8f883b9425554721bf059d8a16b33f6a43db2b48939e030b9bf22b17"
+    },
+    {
+      "file": "reference.mseed",
+      "originUrl": "https://service.earthscope.org/fdsnws/dataselect/1/",
+      "retrievedAt": "2026-10-10T12:03:33.301476+00:00",
+      "processing": "local files; numerical generation for model; bounded queries for events; original miniSEED",
+      "version": "1",
+      "author": "IU GSN / EarthScope",
+      "license": "Open seismic data; cite IU GSN and EarthScope",
+      "attribution": "IU GSN / EarthScope",
+      "sha256": "8af109e38ae0b97ee0562c0421a953c4df2475f59acecd383d7df87a9f5ab948"
+    },
+    {
+      "file": "reference-waveform.json",
+      "originUrl": "https://service.earthscope.org/fdsnws/dataselect/1/",
+      "retrievedAt": "2026-10-10T12:03:33.301677+00:00",
+      "processing": "local files; numerical generation for model; bounded queries for events; original miniSEED",
+      "version": "1",
+      "author": "EarthScope",
+      "license": "metadata",
+      "attribution": "EarthScope",
+      "sha256": "6a7b536d02ad6cb258d4fab0deea590c6ff84cba169931f3e8c6dc8488db7bf1"
+    },
+    {
+      "file": "model/manifest.json",
+      "originUrl": "https://docs.obspy.org/packages/obspy.taup.html",
+      "retrievedAt": "2026-10-10T12:03:33.301723+00:00",
+      "processing": "local files; numerical generation for model; bounded queries for events; original miniSEED",
+      "version": "1",
+      "author": "ObsPy / IASP91",
+      "license": "LGPL-3.0 method; numerical output",
+      "attribution": "ObsPy / IASP91",
+      "sha256": "33ff6c644d23dad4ec6c1bcb77f18b8a3381ae79dd5273aff0de8191ce410975"
+    },
+    {
+      "file": "cities.json",
+      "originUrl": "https://download.geonames.org/export/dump/cities15000.zip",
+      "retrievedAt": "2026-10-10T12:11:13.870651+00:00",
+      "processing": "12 city representative presets reviewed against GeoNames centers",
+      "version": "1",
+      "author": "GeoNames / Pulse",
+      "license": "CC BY 4.0",
+      "attribution": "GeoNames",
+      "sha256": "abea1c53c7ab72bc06957cfb115b0e8090ce84db0e14919d5b3ae94961ba3bc1"
+    }
+  ]
+}
