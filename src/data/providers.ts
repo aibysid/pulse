@@ -18,7 +18,7 @@ export function normalize(
     metadata?: { generated: number };
   };
   if (data?.type !== "FeatureCollection" || !Array.isArray(data.features))
-    throw Error("Data could not be read");
+    throw new SchemaError("Data could not be read");
   let skipped = 0;
   const events: Event[] = [];
   for (const item of data.features.slice(0, 2000)) {
@@ -151,8 +151,16 @@ export function parseTable(text: string) {
       Object.fromEntries(s.split("|").map((v, i) => [header[i], v.trim()])),
     );
 }
+export const utcTimestamp = (value: string) =>
+  typeof value !== "string"
+    ? NaN
+    : Date.parse(
+        value.includes("T") && !/(Z|[+-]\d{2}:\d{2})$/i.test(value)
+          ? value + "Z"
+          : value,
+      );
 export const epochValid = (start: string, end: string, time: number) =>
-  Date.parse(start) <= time && (!end || Date.parse(end) >= time);
+  utcTimestamp(start) <= time && (!end || utcTimestamp(end) >= time);
 export function parseStations(text: string, time: number) {
   const map = new Map<string, Station>();
   for (const p of parseTable(text)) {
@@ -160,6 +168,8 @@ export function parseStations(text: string, time: number) {
       lon = Number(p.Longitude);
     if (
       p.Network !== "IU" ||
+      !p.Latitude?.trim() ||
+      !p.Longitude?.trim() ||
       !/^[A-Z0-9]{1,8}$/.test(p.Station) ||
       !epochValid(p.StartTime, p.EndTime, time) ||
       !Number.isFinite(lat) ||
@@ -181,7 +191,7 @@ export function parseStations(text: string, time: number) {
     };
     if (
       !map.has(key) ||
-      Date.parse(map.get(key)!.start) < Date.parse(station.start)
+      utcTimestamp(map.get(key)!.start) < utcTimestamp(station.start)
     )
       map.set(key, station);
   }
@@ -276,3 +286,5 @@ export function historyParams(
   }
   return params;
 }
+
+export class SchemaError extends Error {}

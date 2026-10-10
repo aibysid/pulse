@@ -236,3 +236,20 @@ describe("TauP reference fixtures", () => {
     }
   });
 });
+
+it("interprets timezone-free FDSN epoch timestamps as UTC", () => {
+  expect(
+    epochValid(
+      "2020-01-01T00:00:00",
+      "2020-01-01T02:00:00",
+      Date.parse("2020-01-01T01:00:00Z"),
+    ),
+  ).toBe(true);
+  expect(
+    epochValid(
+      "2020-01-01T00:00:00",
+      "2020-01-01T02:00:00",
+      Date.parse("2020-01-01T03:00:00Z"),
+    ),
+  ).toBe(false);
+});

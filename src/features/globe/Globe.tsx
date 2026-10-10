@@ -159,7 +159,7 @@ function Markers({
             p = new THREE.Vector3(
               ...vector(event.latitudeDeg, event.longitudeDeg),
             );
-          if (p.dot(camera.position) > 0) onSelect(event);
+          if (p.dot(camera.position) > 1.01) onSelect(event);
         }
       }}
     >

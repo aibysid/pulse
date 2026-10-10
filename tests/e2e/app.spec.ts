@@ -211,3 +211,31 @@ test("station epoch selection and 204 no-recording path", async ({ page }) => {
     page.getByText("No recording returned for this channel and time."),
   ).toBeVisible();
 });
+
+test("station receiver resolves its historical epoch when origin changes", async ({
+  page,
+}) => {
+  await page.route("https://service.earthscope.org/**", (r) => {
+    const historical = r.request().url().includes("2011");
+    return r.fulfill({
+      body:
+        "#Network|Station|Latitude|Longitude|Elevation|SiteName|StartTime|EndTime\nIU|ANMO|" +
+        (historical
+          ? "34|-105|1820|Historical station|1990-01-01|2020-01-01"
+          : "35|-106|1820|Current station|2020-01-01|"),
+    });
+  });
+  await page.goto("");
+  await page.getByRole("button", { name: "Stations", exact: true }).click();
+  await page.getByText("Coordinates & stations", { exact: true }).click();
+  await page
+    .getByRole("combobox", { name: "Station receiver" })
+    .selectOption("IU.ANMO");
+  await expect(page.getByLabel("Latitude", { exact: true })).toHaveValue("35");
+  await page.getByRole("button", { name: "Explore history" }).click();
+  await page.getByRole("button", { name: "2011 Tohoku" }).click();
+  await expect(page.getByLabel("Latitude", { exact: true })).toHaveValue("34");
+  await expect(page.getByLabel("Longitude", { exact: true })).toHaveValue(
+    "-105",
+  );
+});

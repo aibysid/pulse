@@ -171,7 +171,7 @@ export default function Inside({
             >
               {rays.map((r, i) => (
                 <option key={r.id} value={i}>
-                  {r.phase} · {r.distanceDeg}° · branch {i + 1}
+                  {r.phase} · {r.distanceDeg}° · ray {i + 1}
                 </option>
               ))}
             </select>

@@ -14,6 +14,8 @@ import {
   normalize,
   request,
   ProviderError,
+  SchemaError,
+  epochValid,
   parseStations,
   historyParams,
 } from "../data/providers";
@@ -182,7 +184,10 @@ export default function App() {
         if (controller.signal.aborted) return;
         failures.current++;
         const p = error as ProviderError;
-        const retryable = !p.status || p.status === 429 || p.status >= 500;
+        const unreadable =
+          error instanceof SchemaError || error instanceof SyntaxError;
+        const retryable =
+          !unreadable && (!p.status || p.status === 429 || p.status >= 500);
         retryAt.current = retryable
           ? Date.now() +
             Math.max(
@@ -193,7 +198,9 @@ export default function App() {
           : Infinity;
         if (!retryable) failures.current = 3;
         setFeedError(
-          "USGS source unavailable. Last observations are retained; Retry or explore a historical reference.",
+          unreadable
+            ? "Data could not be read. Last observations are retained; use Retry or explore a historical reference."
+            : "USGS source unavailable. Last observations are retained; Retry or explore a historical reference.",
         );
       } finally {
         if (!controller.signal.aborted) setLoading(false);
@@ -371,14 +378,52 @@ export default function App() {
     Math.floor(seconds),
   ]);
   useEffect(() => {
-    if (!stationEnabled && !initial.receiver?.id.includes(".")) return;
+    if (
+      !stationEnabled &&
+      !receiver.id.startsWith("IU.") &&
+      !initial.receiver?.id.includes(".")
+    )
+      return;
     const controller = new AbortController();
     const time = selected?.originMs ?? Date.now();
+    if (
+      receiver.station &&
+      !epochValid(receiver.station.start, receiver.station.end, time)
+    )
+      setReceiver((previous) => ({
+        id: previous.id,
+        name: "Coordinate receiver (station epoch unavailable)",
+        lat: previous.lat,
+        lon: previous.lon,
+      }));
     const epoch = new Date(time).toISOString();
     const key = `IU:${epoch}`;
+    const applyStations = (data: Station[]) => {
+      setStations(data);
+      setReceiver((previous) => {
+        if (!previous.id.startsWith("IU.")) return previous;
+        const station = data.find(
+          (x) => x.network + "." + x.station === previous.id,
+        );
+        return station
+          ? {
+              id: previous.id,
+              name: previous.id,
+              lat: station.lat,
+              lon: station.lon,
+              station,
+            }
+          : {
+              id: previous.id,
+              name: "Coordinate receiver (station epoch unavailable)",
+              lat: previous.lat,
+              lon: previous.lon,
+            };
+      });
+    };
     const cached = stationCache.current.get(key);
     if (cached && Date.now() - cached.time < 21600000) {
-      setStations(cached.data);
+      applyStations(cached.data);
       return;
     }
     setStationStatus("Loading station epochs…");
@@ -395,6 +440,7 @@ export default function App() {
     )
       .then((r) => r.text())
       .then((text) => {
+        if (controller.signal.aborted) return;
         let data = parseStations(text, time);
         if (data.length > 200) {
           data = data
@@ -420,7 +466,11 @@ export default function App() {
             `${data.length} IU stations · metadata, not online status`,
           );
         stationCache.current.set(key, { time: Date.now(), data });
-        setStations(data);
+        applyStations(data);
+        if (stationCache.current.size > 20)
+          stationCache.current.delete(
+            stationCache.current.keys().next().value!,
+          );
         if (
           initial.receiver?.id.includes(".") &&
           receiver.name === "Coordinate receiver"
@@ -443,7 +493,11 @@ export default function App() {
           setStationStatus("Station metadata unavailable");
       });
     return () => controller.abort();
-  }, [stationEnabled, selected?.id]);
+  }, [stationEnabled, selected?.id, selected?.originMs, receiver.id]);
+  useEffect(() => {
+    setLat(String(receiver.lat));
+    setLon(String(receiver.lon));
+  }, [receiver.lat, receiver.lon]);
   const setRecv = (r: Receiver) => {
     setReceiver(r);
     setLat(String(r.lat));
@@ -564,7 +618,7 @@ export default function App() {
     history.replaceState(null, "", url);
     try {
       await navigator.clipboard.writeText(url);
-      setNotice("Paused replay link copied.");
+      setNotice("Share link copied.");
     } catch {
       setNotice(`Share link: ${url}`);
     }
@@ -1495,11 +1549,19 @@ export default function App() {
                         e.preventDefault();
                         const a = Number(lat),
                           b = Number(lon);
-                        if (!lat || !Number.isFinite(a) || Math.abs(a) > 90) {
+                        if (
+                          !lat.trim() ||
+                          !Number.isFinite(a) ||
+                          Math.abs(a) > 90
+                        ) {
                           setCoordError("Latitude must be between −90 and 90.");
                           return;
                         }
-                        if (!lon || !Number.isFinite(b) || Math.abs(b) > 180) {
+                        if (
+                          !lon.trim() ||
+                          !Number.isFinite(b) ||
+                          Math.abs(b) > 180
+                        ) {
                           setCoordError(
                             "Longitude must be between −180 and 180.",
                           );

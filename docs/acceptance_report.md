@@ -4,8 +4,8 @@ Build date: 10 October 2026. Owner: aibysid. This report distinguishes implement
 
 ## Automated and numerical evidence
 
-- `npm run checks`: lint, TypeScript, 21 deterministic unit tests and all asset checks pass.
-- Nine browser journeys pass in Chromium 156, Firefox 157 and WebKit 27.2 (27 engine runs). Tests exercise replay, receiver selection, shared hash refresh, JSON/PNG exports, hidden-tab pause, missing recording, outage, mobile width and serious/critical axe checks on the accessible shell.
+- `npm run checks`: lint, TypeScript, 22 deterministic unit tests and all asset checks pass.
+- Ten browser journeys pass in Chromium 156, Firefox 157 and WebKit 27.2 (30 engine runs). Tests exercise replay, receiver selection, shared hash refresh, JSON/PNG exports, hidden-tab pause, missing recording, outage, mobile width and serious/critical axe checks on the accessible shell.
 - Real bundled 2011 miniSEED decoding is tested in both the unit suite and browsers; no generated sample substitute is used.
 - Numerical validation: 133315 center/edge queries; 51975 accepted phase cells; maximum sampled error 0.355 s. Seed 91: 500 additional locations, 468 accepted phase samples, maximum error 0.128 s. Manifest checksums and missing/tampered asset behavior are tested. Exact stored reference nodes are compared with independent TauP fixtures.
 - Initial browser shell is visible with slow-4G/4x-CPU emulation. Published owned assets remain under 20 MiB; numerical payload is about 1 MiB, below the 8-MiB model target. Detailed measured browser metadata is in `evidence/performance.json`.
@@ -64,3 +64,7 @@ Desktop draw benchmark used headless Chromium's **SwiftShader software renderer*
 A follow-up benchmark enabled the native **ANGLE Metal Apple M1** renderer and observed **30.03 FPS median** during automated drag at 1440×900, with 13.7 MiB JS heap. It meets the numeric desktop frame target in this recorded benchmark. Physical mobile hardware and the prior-stable matrix remain unverified.
 
 Native desktop hardware identifier: `MacBookAir10,1` (Apple M1 MacBook Air); ANGLE Metal renderer was enabled for the GPU benchmark. Normal headless Chromium otherwise selected SwiftShader, so the two results are retained separately.
+
+Version 1.0.2 adds a regression for a station receiver when the same event ID changes from a live fixture origin to its historical origin. Receiver coordinates and epoch re-resolve at the selected origin, and unavailable epochs become explicitly labeled coordinate receivers. Station metadata cache is bounded to 20 epoch entries.
+
+FDSN timestamps without a timezone suffix are interpreted as UTC, not device local time. Blank station coordinates are rejected. Invalid feed schemas suspend automatic retry; manual retry remains available.
