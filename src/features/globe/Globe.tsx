@@ -145,6 +145,7 @@ function Markers({
       );
     });
     ref.current.instanceMatrix.needsUpdate = true;
+    ref.current.computeBoundingSphere();
     if (ref.current.instanceColor) ref.current.instanceColor.needsUpdate = true;
   }, [events, selected, dummy]);
   return (

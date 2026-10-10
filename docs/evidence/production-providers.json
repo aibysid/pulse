@@ -1,12 +1,12 @@
 {
   "origin": "https://aibysid.github.io",
-  "date": "2026-10-10T12:21:01.403Z",
+  "date": "2026-10-10T12:51:33.707Z",
   "results": [
     {
       "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson",
       "status": 200,
       "type": "application/json; charset=utf-8",
-      "bytes": 38132
+      "bytes": 38829
     },
     {
       "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2011-03-11&endtime=2011-03-12&minmagnitude=8&limit=5",
@@ -33,5 +33,5 @@
       "bytes": 51200
     }
   ],
-  "waveform": "Recorded evidence\n\nArchive recordings are observations. A modeled station arrival is a prediction, not a detection.\n\nLoad IU.ANMO recording\nDated Tohoku reference\n\n98 recorded segments · 0 gaps · 0 overlaps\n\nOn demand archive recording · IU.ANMO.00.BHZ\n\n5 minutes before through 15 minutes after modeled direct P\n2011-03-11 05:53:46 UTC — 2011-03-11 06:13:46 UTC\nFetched 2026-10-10 12:21:00 UTC · EarthScope\n\nExact archive request ↗\n\nRaw instrument counts · sampling rates 20 Hz. Gaps break the trace; overlaps are retained.\n\n Remove segment mean (display only)\nDownload original miniSEED"
+  "waveform": "Recorded evidence\n\nArchive recordings are observations. A modeled station arrival is a prediction, not a detection.\n\nLoad IU.ANMO recording\nDated Tohoku reference\n\n98 recorded segments · 0 gaps · 0 overlaps\n\nOn demand archive recording · IU.ANMO.00.BHZ\n\n5 minutes before through 15 minutes after modeled direct P\n2011-03-11 05:53:46 UTC — 2011-03-11 06:13:46 UTC\nFetched 2026-10-10 12:51:32 UTC · EarthScope\n\nExact archive request ↗\n\nRaw instrument counts · sampling rates 20 Hz. Gaps break the trace; overlaps are retained.\n\nRemove segment mean (display only)\nDownload original miniSEED"
 }

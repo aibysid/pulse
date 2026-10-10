@@ -1239,3 +1239,5 @@ label:has(>input[type=checkbox]){min-height:44px;display:flex;align-items:center
 .globe-tools{bottom:189px}
 @media(max-width:1199px){.globe-tools{bottom:189px}}
 @media(max-width:767px){.full-label{display:none}.compact-label{display:inline}.globe-tools{bottom:102px}.globe-canvas{bottom:150px}.replay-dock{padding:0 8px}}
+.mobile-model-label,.mobile-surface{display:none!important}
+@media(max-width:767px) and (orientation:portrait){.globe-tools button:first-child{display:block}.mobile-model-label{display:block!important;position:absolute;top:65px;left:16px;font-size:12px;z-index:2;background:#101827d9;padding:4px 8px;border-radius:4px}.mobile-surface{display:flex!important}.sheet-expanded .replay-dock{position:fixed;top:56px;bottom:auto;z-index:16}.sheet-expanded .mobile-tabs{top:88px}.sheet-expanded .event-rail,.sheet-expanded .inspector{top:132px}}

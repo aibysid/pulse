@@ -302,6 +302,10 @@ export default function App() {
       frame = 0;
     const tick = () => {
       const time = performance.now();
+      if (time - last > 1500) {
+        setPlaying(false);
+        return;
+      }
       if (document.hidden) {
         setPlaying(false);
         return;
@@ -442,6 +446,9 @@ export default function App() {
   }, [stationEnabled, selected?.id]);
   const setRecv = (r: Receiver) => {
     setReceiver(r);
+    setLat(String(r.lat));
+    setLon(String(r.lon));
+    if (r.station || r.id === "coordinate") setTab("receiver");
     setPick(false);
     if (cities.some((c) => c.id === r.id)) save("city", r.id);
     setCoordError("");
@@ -1200,13 +1207,17 @@ export default function App() {
                 )}
                 <div className="globe-tools">
                   <button
+                    aria-label="Reset view"
                     onClick={() => {
                       setFocus(false);
                       setZoom(0);
                     }}
                     title="Reset view"
                   >
-                    Reset view
+                    <span className="full-label">Reset view</span>
+                    <span className="compact-label" aria-hidden="true">
+                      ↺
+                    </span>
                   </button>
                   <button
                     onClick={() => {
@@ -1257,6 +1268,10 @@ export default function App() {
                       PNG
                     </span>
                   </button>
+                </div>
+                <div className="mobile-model-label">
+                  Modeled arrivals · <span className="p-color">━ P</span> ·{" "}
+                  <span className="s-color">┄ S</span>
                 </div>
                 <div className="legend">
                   <strong>Modeled arrivals</strong>
@@ -1380,7 +1395,9 @@ export default function App() {
                 <div className="detail-mag">
                   M{selected.magnitude?.toFixed(1) ?? "?"}{" "}
                   <small>
-                    {selected.magnitudeType ?? "Unknown magnitude type"}
+                    {selected.magnitude === null
+                      ? "Unknown magnitude"
+                      : (selected.magnitudeType ?? "Unknown magnitude type")}
                   </small>
                 </div>
                 <h2>{selected.place}</h2>
@@ -1463,6 +1480,14 @@ export default function App() {
                     {geo.degrees.toFixed(2)}° ·{" "}
                     {Math.round(geo.km).toLocaleString()} km from epicenter
                   </p>
+                  <label className="mobile-surface">
+                    <input
+                      type="checkbox"
+                      checked={surface}
+                      onChange={(e) => setSurface(e.target.checked)}
+                    />
+                    Illustrative surface · 3.5 km/s
+                  </label>
                   <details open={tab === "receiver"}>
                     <summary>Coordinates & stations</summary>
                     <form
