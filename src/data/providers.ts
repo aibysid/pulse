@@ -46,7 +46,10 @@ export function normalize(
     events.push({
       id: f.id,
       originMs: Number(p.time),
-      updatedMs: typeof p.updated === "number" ? p.updated : null,
+      updatedMs:
+        typeof p.updated === "number" && Number.isFinite(p.updated)
+          ? p.updated
+          : null,
       latitudeDeg: c[1],
       longitudeDeg: c[0],
       depthKm: Number.isFinite(c[2]) ? c[2] : null,
@@ -157,6 +160,7 @@ export function parseStations(text: string, time: number) {
       lon = Number(p.Longitude);
     if (
       p.Network !== "IU" ||
+      !/^[A-Z0-9]{1,8}$/.test(p.Station) ||
       !epochValid(p.StartTime, p.EndTime, time) ||
       !Number.isFinite(lat) ||
       !Number.isFinite(lon) ||
@@ -187,6 +191,7 @@ export function chooseChannel(text: string, start: number, end: number) {
   const rows = parseTable(text).filter(
     (p) =>
       ["BHZ", "HHZ"].includes(p.Channel) &&
+      (p.Location === "" || /^[A-Z0-9]{1,2}$/.test(p.Location)) &&
       epochValid(p.StartTime, p.EndTime, start) &&
       epochValid(p.StartTime, p.EndTime, end),
   );

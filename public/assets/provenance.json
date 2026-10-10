@@ -66,6 +66,72 @@
       "license": "CC BY 4.0",
       "attribution": "GeoNames",
       "sha256": "abea1c53c7ab72bc06957cfb115b0e8090ce84db0e14919d5b3ae94961ba3bc1"
+    },
+    {
+      "file": "model/rays.json",
+      "originUrl": "https://docs.obspy.org/packages/obspy.taup.html",
+      "retrievedAt": "2026-10-10T12:30:48.382017+00:00",
+      "processing": "ObsPy 1.5.0 TauP / IASP91 numerical generation and validation",
+      "version": "1",
+      "author": "Pulse, using ObsPy / IASP91",
+      "license": "Numerical output; LGPL-3.0 method acknowledgment",
+      "attribution": "ObsPy Development Team; Kennett and Engdahl 1991; Crotwell et al. 1999",
+      "sha256": "a76660743280b8adac9c69a746a508773a49892257557a0b8ff3e61e4b1fd088"
+    },
+    {
+      "file": "model/bounds.bin",
+      "originUrl": "https://docs.obspy.org/packages/obspy.taup.html",
+      "retrievedAt": "2026-10-10T12:30:48.382876+00:00",
+      "processing": "ObsPy 1.5.0 TauP / IASP91 numerical generation and validation",
+      "version": "1",
+      "author": "Pulse, using ObsPy / IASP91",
+      "license": "Numerical output; LGPL-3.0 method acknowledgment",
+      "attribution": "ObsPy Development Team; Kennett and Engdahl 1991; Crotwell et al. 1999",
+      "sha256": "47b749831695159417aa7e3813966a521f23932c7c4bb73be6008fc0ae801af4"
+    },
+    {
+      "file": "model/phases.bin",
+      "originUrl": "https://docs.obspy.org/packages/obspy.taup.html",
+      "retrievedAt": "2026-10-10T12:30:48.383527+00:00",
+      "processing": "ObsPy 1.5.0 TauP / IASP91 numerical generation and validation",
+      "version": "1",
+      "author": "Pulse, using ObsPy / IASP91",
+      "license": "Numerical output; LGPL-3.0 method acknowledgment",
+      "attribution": "ObsPy Development Team; Kennett and Engdahl 1991; Crotwell et al. 1999",
+      "sha256": "9062ee4f49a016d2e8ef5cae68785e24ef7f3ca3abd48d350ab52f25fdb8e713"
+    },
+    {
+      "file": "model/validation.json",
+      "originUrl": "https://docs.obspy.org/packages/obspy.taup.html",
+      "retrievedAt": "2026-10-10T12:30:48.383835+00:00",
+      "processing": "ObsPy 1.5.0 TauP / IASP91 numerical generation and validation",
+      "version": "1",
+      "author": "Pulse, using ObsPy / IASP91",
+      "license": "Numerical output; LGPL-3.0 method acknowledgment",
+      "attribution": "ObsPy Development Team; Kennett and Engdahl 1991; Crotwell et al. 1999",
+      "sha256": "530ca4564034ad447fdfae47d807025ea4b76c85360c9c7113b742476a0b62ae"
+    },
+    {
+      "file": "model/times.bin",
+      "originUrl": "https://docs.obspy.org/packages/obspy.taup.html",
+      "retrievedAt": "2026-10-10T12:30:48.384011+00:00",
+      "processing": "ObsPy 1.5.0 TauP / IASP91 numerical generation and validation",
+      "version": "1",
+      "author": "Pulse, using ObsPy / IASP91",
+      "license": "Numerical output; LGPL-3.0 method acknowledgment",
+      "attribution": "ObsPy Development Team; Kennett and Engdahl 1991; Crotwell et al. 1999",
+      "sha256": "9405f1d8363090fdac20de06ceb6dfb5f63cafabbd7157535021d4b1cf6cc253"
+    },
+    {
+      "file": "../pulse.svg",
+      "originUrl": "https://github.com/aibysid/pulse/blob/main/public/pulse.svg",
+      "retrievedAt": "2026-10-10T12:30:48.384720+00:00",
+      "processing": "Original local SVG",
+      "version": "1",
+      "author": "Pulse contributors",
+      "license": "MIT",
+      "attribution": "Pulse",
+      "sha256": "036a8ab1cecd324e58c978a669aea4140919d37bfb03af658acf8abd68c72aff"
     }
   ]
 }

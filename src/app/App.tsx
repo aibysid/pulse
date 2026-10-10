@@ -82,7 +82,7 @@ export default function App() {
     [pick, setPick] = useState(false),
     [focus, setFocus] = useState(false),
     [zoom, setZoom] = useState(0),
-    [sceneReady,setSceneReady]=useState(false),
+    [sceneReady, setSceneReady] = useState(false),
     [landmarks, setLandmarks] = useState<Landmark[]>([]),
     [notice, setNotice] = useState(initial.warning),
     [tab, setTab] = useState("events"),
@@ -536,12 +536,24 @@ export default function App() {
     [listed, minMag, hmag, route, filter, sort],
   );
   const ready = useCallback((c: HTMLCanvasElement) => {
-    canvas.current = c;setSceneReady(true);
+    canvas.current = c;
+    setSceneReady(true);
   }, []);
-  const fallbackReady=useCallback(()=>{canvas.current=null;setSceneReady(true);},[]);
+  const fallbackReady = useCallback(() => {
+    canvas.current = null;
+    setSceneReady(true);
+  }, []);
   const copy = async () => {
     if (!selected) return;
-    const url = shareUrl(route, selected.id, receiver, mode, seconds, speed, scenario);
+    const url = shareUrl(
+      route,
+      selected.id,
+      receiver,
+      mode,
+      seconds,
+      speed,
+      scenario,
+    );
     history.replaceState(null, "", url);
     try {
       await navigator.clipboard.writeText(url);
@@ -1165,7 +1177,8 @@ export default function App() {
                     zoom={zoom}
                     onSelect={choose}
                     onReceiver={setRecv}
-                    onReady={ready} onFallbackReady={fallbackReady}
+                    onReady={ready}
+                    onFallbackReady={fallbackReady}
                     forceFallback={new URLSearchParams(location.search).has(
                       "fallback",
                     )}
@@ -1225,11 +1238,24 @@ export default function App() {
                   <button aria-pressed={grid} onClick={() => setGrid(!grid)}>
                     Grid
                   </button>
-                  <button onClick={() => navigate("/inside")}>
-                    Inside Earth
+                  <button
+                    aria-label="Inside Earth"
+                    onClick={() => navigate("/inside")}
+                  >
+                    <span className="full-label">Inside Earth</span>
+                    <span className="compact-label" aria-hidden="true">
+                      Earth
+                    </span>
                   </button>
-                  <button disabled={!selected||!sceneReady} onClick={screenshot}>
-                    Screenshot
+                  <button
+                    disabled={!selected || !sceneReady}
+                    aria-label="Screenshot"
+                    onClick={screenshot}
+                  >
+                    <span className="full-label">Screenshot</span>
+                    <span className="compact-label" aria-hidden="true">
+                      PNG
+                    </span>
                   </button>
                 </div>
                 <div className="legend">
@@ -1242,7 +1268,7 @@ export default function App() {
                       checked={surface}
                       onChange={(e) => setSurface(e.target.checked)}
                     />{" "}
-                    Illustrative surface wave
+                    Illustrative surface · 3.5 km/s
                   </label>
                 </div>
                 {stationEnabled && (

@@ -115,7 +115,8 @@ export default function Inside({
           fill="#a17d4b"
           stroke="#ead3a9"
         />
-        <text x="274" y="85">
+        <path d="M274 52 L309 39" fill="none" stroke="#b7c4d8" />
+        <text x="313" y="43">
           Crust
         </text>
         <text x="274" y="125">

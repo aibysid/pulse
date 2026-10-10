@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-10T12:26:57.633Z",
+  "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)), SwiftShader driver)",
+  "viewport": "1440x900",
+  "browser": "156.0.8078.4",
+  "method": "WebGL draw calls sampled during automated pointer drag; frame intervals; JS heap excludes GPU allocations",
+  "frames": 258,
+  "medianFrameIntervalMs": 66.69999999999891,
+  "medianFps": 14.992503748126182,
+  "jsHeapBytes": 14025949
+}

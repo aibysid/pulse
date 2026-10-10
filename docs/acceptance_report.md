@@ -35,8 +35,8 @@ Build date: 10 October 2026. Owner: aibysid. This report distinguishes implement
 | A19 | Passed: shared paused replay refresh and malformed coordinate input. City/station/coordinate schema is validated. |
 | A20 | Passed: JSON schema separates observations/model; PNG magic bytes and manual readable label overlay checks. |
 | A21 | Shell axe has no serious/critical violations; keyboard, responsive fallback and reduced-motion behavior tested/implemented. Full assistive-technology audit remains unperformed. |
-| A22 | Partial validation: desktop and mobile emulation screenshots, no horizontal overflow; asset budgets pass. Physical midrange mobile FPS, integrated-GPU FPS, prior-stable browser versions, and comprehensive memory/latency certification remain unperformed. |
-| A23 | Production check is recorded in `evidence/production-providers.json` after Pages deploy; the workflow's terminal deployment and actual origin are required evidence. |
+| A22 | Partial validation: desktop and mobile emulation screenshots, no horizontal overflow; asset budgets pass. Native Apple M1 MacBook Air automated drag measured 30.03 FPS at 1440×900. Physical midrange mobile FPS, prior-stable browser versions, and comprehensive memory/latency certification remain unperformed. |
+| A23 | Passed: successful Pages workflow, actual-origin USGS/EarthScope requests, real recording decode, refreshed paused hash route, 360-pixel width and fallback. See production evidence JSON. |
 | A24 | Passed: MIT authored license, third-party notices, checksummed nested manifests, source links, README, architecture/science/source/deployment/runbook docs and $0 recurring cost ledger. |
 
 ## Functional scope
@@ -53,4 +53,14 @@ Local browser origin checks returned HTTP 200 for the live GeoJSON, bounded hist
 
 The application is educational. Missing direct phases and conservative boundary-cell rejection reduce model coverage by design. It has no early warning, risk/damage estimate, station online guarantee, instrument response correction or signal picking. Third-party archive access can fail and is shown explicitly.
 
-Automated browser engine runs and mobile emulation do not constitute all physical devices, prior-stable versions, or full WCAG 2.2 AA conformance. A22's complete hardware benchmark matrix and comprehensive manual assistive-technology checks remain release-certification work; they are not concealed as passed. The source and deployed application are usable while those checks remain open.
+Automated browser engine runs and mobile emulation do not constitute all physical devices, prior-stable versions, or full WCAG 2.2 AA conformance. A22's complete mobile/prior-stable benchmark matrix and comprehensive manual assistive-technology checks remain release-certification work; they are not concealed as passed. The source and deployed application are usable while those checks remain open.
+
+## Verified production release
+
+Pages deployment succeeded for application commit `e451beb`. At 2026-10-10 12:21 UTC, browser requests from `https://aibysid.github.io` returned HTTP 200 for all five provider endpoints. The direct viewer decoded a real 98-segment IU.ANMO.00.BHZ trace at 20 Hz. A shared Tohoku link refreshed with mode REPLAY PAUSED, t=120 and Tokyo receiver; 360-pixel layout had no horizontal overflow and explicit fallback loaded without page errors. Subsequent delivery-evidence changes use the same passing workflow.
+
+Desktop draw benchmark used headless Chromium's **SwiftShader software renderer**, not a physical integrated GPU. Automated drag after coastline batching measured about 15 FPS and 14 MiB JS heap (GPU memory excluded). This software-backend result is below the requested hardware FPS target and cannot certify A22. The benchmark JSON retains renderer and method. A real GPU laptop and physical mobile matrix remain unverified. Slow-4G/4x-CPU emulation recorded first contentful paint at 988 ms.
+
+A follow-up benchmark enabled the native **ANGLE Metal Apple M1** renderer and observed **30.03 FPS median** during automated drag at 1440×900, with 13.7 MiB JS heap. It meets the numeric desktop frame target in this recorded benchmark. Physical mobile hardware and the prior-stable matrix remain unverified.
+
+Native desktop hardware identifier: `MacBookAir10,1` (Apple M1 MacBook Air); ANGLE Metal renderer was enabled for the GPU benchmark. Normal headless Chromium otherwise selected SwiftShader, so the two results are retained separately.

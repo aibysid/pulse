@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-10T12:31:42.898Z",
+  "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1, Unspecified Version)",
+  "viewport": "1440x900",
+  "browser": "156.0.8078.4",
+  "method": "WebGL draw calls sampled during automated pointer drag; frame intervals; JS heap excludes GPU allocations",
+  "frames": 251,
+  "medianFrameIntervalMs": 33.30000000000018,
+  "medianFps": 30.030030030029867,
+  "jsHeapBytes": 13716997,
+  "hardwareModel": "MacBookAir10,1 (Apple M1 MacBook Air)"
+}

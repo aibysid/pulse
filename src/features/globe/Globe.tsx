@@ -29,7 +29,7 @@ export type GlobeProps = {
   onSelect: (e: Event) => void;
   onReceiver: (r: Receiver) => void;
   onReady: (canvas: HTMLCanvasElement) => void;
-  onFallbackReady?:()=>void;
+  onFallbackReady?: () => void;
   model: Model | null;
   elapsed: number;
   forceFallback?: boolean;
@@ -100,21 +100,22 @@ function LandLines({
         ),
     [land],
   );
+  const geometry = useMemo(() => {
+    const positions = lines.flatMap((ring) =>
+      ring.slice(1).flatMap((point, i) => [...ring[i], ...point]),
+    );
+    const g = new THREE.BufferGeometry();
+    g.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
+    return g;
+  }, [lines]);
+  useEffect(() => () => geometry.dispose(), [geometry]);
   return (
-    <>
-      {lines.map((p, i) => (
-        <Line
-          key={i}
-          points={p}
-          color="#588297"
-          lineWidth={0.65}
-          transparent
-          opacity={0.65}
-        />
-      ))}
-    </>
+    <lineSegments geometry={geometry}>
+      <lineBasicMaterial color="#588297" transparent opacity={0.65} />
+    </lineSegments>
   );
 }
+
 function Markers({
   events,
   selected,
@@ -206,6 +207,15 @@ function Scene(p: GlobeProps) {
   const dragging = useRef(false);
   const target = useRef(new THREE.Vector3(...vector(15, 80, 3.1)));
   useEffect(() => {
+    const context = gl.getContext();
+    const ext = context.getExtension("WEBGL_debug_renderer_info");
+    if (
+      ext &&
+      /SwiftShader|llvmpipe|Software/i.test(
+        String(context.getParameter(ext.UNMASKED_RENDERER_WEBGL)),
+      )
+    )
+      gl.setPixelRatio(1);
     p.onReady(gl.domElement);
     const lost = (e: globalThis.Event) => {
       e.preventDefault();
@@ -272,7 +282,12 @@ function Scene(p: GlobeProps) {
         }}
       >
         <sphereGeometry args={[1, 96, 64]} />
-        <meshPhongMaterial key={texture?.uuid??"ocean"} color={texture?"#ffffff":"#102b43"} map={texture} shininess={6} />
+        <meshPhongMaterial
+          key={texture?.uuid ?? "ocean"}
+          color={texture ? "#ffffff" : "#102b43"}
+          map={texture}
+          shininess={6}
+        />
       </mesh>
       <mesh scale={1.025}>
         <sphereGeometry args={[1, 64, 48]} />
@@ -421,7 +436,7 @@ function Scene(p: GlobeProps) {
   );
 }
 function MapFallback(p: GlobeProps) {
-  useEffect(()=>p.onFallbackReady?.(),[p.onFallbackReady]);
+  useEffect(() => p.onFallbackReady?.(), [p.onFallbackReady]);
   const [land, setLand] = useState<Land[]>([]);
   useEffect(() => {
     fetch(asset("land.geojson"))

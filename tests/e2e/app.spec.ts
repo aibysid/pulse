@@ -75,7 +75,7 @@ test("landmarks, inside rays and recorded reference", async ({ page }) => {
 test("fallback preserves arrivals and mobile does not overflow", async ({
   page,
 }) => {
-  await page.setViewportSize({ width: 390, height: 844 });
+  await page.setViewportSize({ width: 360, height: 800 });
   await page.goto("?fallback=1");
   await expect(
     page.getByText("3D view unavailable · accessible 2D map"),

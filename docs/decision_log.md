@@ -7,3 +7,5 @@ A local canvas texture generated from Natural Earth polygons fills land; local c
 Continuous grid candidate cells passed the error threshold without refinement. Cells with phase/branch/missing-data discontinuities are conservatively rejected. This limitation is visible in the UI and explained in science documentation.
 
 Desktop automated browsers and mobile emulation are distinct from physical-device acceptance. Unperformed physical-device or previous-stable tests are never marked passed.
+
+Coastlines were batched into a single native line-segment draw call. Software renderers reduce pixel density to 1; controls and text retain their sizes. The automated software renderer remains slower than the physical-GPU FPS target, and that limitation is recorded without a passed hardware claim.

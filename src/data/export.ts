@@ -1,4 +1,5 @@
 export function utc(t: number) {
+  if (!Number.isFinite(new Date(t).getTime())) return "Unknown UTC";
   return new Date(t)
     .toISOString()
     .replace("T", " ")

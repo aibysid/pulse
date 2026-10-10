@@ -17,3 +17,12 @@ for _ in range(500):
   err=abs(pred-arrival.time);assert err<=2, (i,j,k,err);errors.append(float(err))
 report=json.loads((root/'validation.json').read_text());report['seededRandomValidation']={'seed':91,'attempts':500,'acceptedSamples':len(errors),'maximumErrorSeconds':max(errors)}
 (root/'validation.json').write_text(json.dumps(report,indent=2));v=(root/'validation.json').read_bytes();m['files']['validation.json']={'sha256':hashlib.sha256(v).hexdigest(),'bytes':len(v)};(root/'manifest.json').write_text(json.dumps(m,indent=2));print(json.dumps(report,indent=2))
+
+# Keep the parent provenance checksums aligned after a deliberate regeneration.
+provenance=root.parent/"provenance.json"
+if provenance.exists():
+ data=json.loads(provenance.read_text())
+ for asset in data["assets"]:
+  if asset["file"].startswith("model/"):
+   asset["sha256"]=hashlib.sha256((root.parent/asset["file"]).read_bytes()).hexdigest()
+ provenance.write_text(json.dumps(data,indent=2))

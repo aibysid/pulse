@@ -18,6 +18,8 @@ export function parseShare(hash: string) {
     if (
       p.has("lat") &&
       p.has("lon") &&
+      p.get("lat")!.trim() !== "" &&
+      p.get("lon")!.trim() !== "" &&
       Number.isFinite(lat) &&
       Number.isFinite(lon) &&
       Math.abs(lat) <= 90 &&
