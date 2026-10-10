@@ -29,6 +29,7 @@ export type GlobeProps = {
   onSelect: (e: Event) => void;
   onReceiver: (r: Receiver) => void;
   onReady: (canvas: HTMLCanvasElement) => void;
+  onFallbackReady?:()=>void;
   model: Model | null;
   elapsed: number;
   forceFallback?: boolean;
@@ -420,6 +421,7 @@ function Scene(p: GlobeProps) {
   );
 }
 function MapFallback(p: GlobeProps) {
+  useEffect(()=>p.onFallbackReady?.(),[p.onFallbackReady]);
   const [land, setLand] = useState<Land[]>([]);
   useEffect(() => {
     fetch(asset("land.geojson"))

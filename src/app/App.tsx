@@ -82,6 +82,7 @@ export default function App() {
     [pick, setPick] = useState(false),
     [focus, setFocus] = useState(false),
     [zoom, setZoom] = useState(0),
+    [sceneReady,setSceneReady]=useState(false),
     [landmarks, setLandmarks] = useState<Landmark[]>([]),
     [notice, setNotice] = useState(initial.warning),
     [tab, setTab] = useState("events"),
@@ -535,8 +536,9 @@ export default function App() {
     [listed, minMag, hmag, route, filter, sort],
   );
   const ready = useCallback((c: HTMLCanvasElement) => {
-    canvas.current = c;
+    canvas.current = c;setSceneReady(true);
   }, []);
+  const fallbackReady=useCallback(()=>{canvas.current=null;setSceneReady(true);},[]);
   const copy = async () => {
     if (!selected) return;
     const url = shareUrl(route, selected.id, receiver, mode, seconds, speed, scenario);
@@ -1163,7 +1165,7 @@ export default function App() {
                     zoom={zoom}
                     onSelect={choose}
                     onReceiver={setRecv}
-                    onReady={ready}
+                    onReady={ready} onFallbackReady={fallbackReady}
                     forceFallback={new URLSearchParams(location.search).has(
                       "fallback",
                     )}
@@ -1226,7 +1228,7 @@ export default function App() {
                   <button onClick={() => navigate("/inside")}>
                     Inside Earth
                   </button>
-                  <button disabled={!selected} onClick={screenshot}>
+                  <button disabled={!selected||!sceneReady} onClick={screenshot}>
                     Screenshot
                   </button>
                 </div>

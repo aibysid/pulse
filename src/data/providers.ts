@@ -119,7 +119,7 @@ export async function request(url: string, signal?: AbortSignal, wave = false) {
   })();
   if (!wave) inflight.set(url, run);
   try {
-    return (await run).clone();
+    return wave ? await run : (await run).clone();
   } finally {
     inflight.delete(url);
   }
